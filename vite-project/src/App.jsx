@@ -1,11 +1,22 @@
 
 import './App.css'
+import Header from './Components/Header/Header'
+import { BrowserRouter, Route, Routes } from "react-router-dom"
+import Home from './Pages/Home/Home'
 
 function App() {
 
   return (
     <>
-     <div className="bg-red-400">hello raju</div>
+    <BrowserRouter>
+    <Header/>
+
+    <Routes>
+      <Route path='/' exact={true} element={<Home/>}/>
+    </Routes>
+
+    </BrowserRouter>
+
     </>
   )
 }
