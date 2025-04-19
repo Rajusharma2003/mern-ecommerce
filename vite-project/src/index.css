@@ -16,8 +16,8 @@ body{
     margin:auto
 }
 
-
 /* top bar */
-
-
 .link:hover{color: #ff5252;}
+
+/* navbar cart color */
+.MuiBadge-badge{background-color: #ff5252 !important;}
