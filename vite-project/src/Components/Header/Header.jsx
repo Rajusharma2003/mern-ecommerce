@@ -8,6 +8,14 @@ import { styled } from '@mui/material/styles';
 import IconButton from '@mui/material/IconButton';
 import { IoCartSharp } from "react-icons/io5";
 
+// compare  icon
+import { IoMdGitCompare } from "react-icons/io";
+// like icon
+import { FaRegHeart } from "react-icons/fa";
+// tooltip
+import Tooltip from '@mui/material/Tooltip';
+import NavigationB from './NavigationB/NavigationB';
+
 // cart
 const StyledBadge = styled(Badge)(({ theme }) => ({
   '& .MuiBadge-badge': {
@@ -22,7 +30,7 @@ const StyledBadge = styled(Badge)(({ theme }) => ({
 const Header = () => {
   return (
 
-    <header>
+    <header className='bg-white'>
 
     {/* Top navbar section */}
     <div className="top-strip py-2 border-t-[1px] border-gray-200 border-b-[1px]">
@@ -50,8 +58,8 @@ const Header = () => {
     </div>
 
 
-     {/* This is the navber section */}
-     <div className="header pt-2">
+     {/*  navber center section */}
+     <div className="header py-4 border-gray-200 border-b-[1px]">
             <div className="container flex items-center justify-between">
 
               <div className="col1 w-[25%]">
@@ -66,24 +74,49 @@ const Header = () => {
               </div>
 
               <div className="col1 w-[30%] flex items-center pl-7">
-                <ul className="flex items-center gap-3">
+                <ul className="flex items-center justify-end w-full gap-3">
                   <li className="list-none">
                     <Link to="/login" className='link transition text-[15px] font-[500]'>Login</Link> / &nbsp;
                     <Link to="register" className='link transition text-[15px] font-[500]'>Register</Link>
                   </li>
 
                   <li>
+                  <Tooltip title="Compare">
+                  <IconButton aria-label="cart">
+                    <StyledBadge badgeContent={4} color="secondary">
+                      <IoMdGitCompare />
+                    </StyledBadge>
+                  </IconButton> 
+                  </Tooltip>
+                  </li>
+
+                  <li>
+                  <Tooltip title="WishList">
+                  <IconButton aria-label="cart">
+                    <StyledBadge badgeContent={4} color="secondary">
+                      <FaRegHeart />
+                    </StyledBadge>
+                  </IconButton>
+                  </Tooltip>
+                  </li>
+                 
+                  <li>
+                  <Tooltip title="Cart">
                   <IconButton aria-label="cart">
                     <StyledBadge badgeContent={4} color="secondary">
                       <IoCartSharp />
                     </StyledBadge>
                   </IconButton>
+                  </Tooltip>
                   </li>
                 </ul>
                 
               </div>
             </div>
-          </div>
+      </div>
+
+      {/* navbar bottom section */}
+      <NavigationB/>
 
     </header>
   )
