@@ -1,3 +1,8 @@
+# creating the mern stack application using a mordern technology
+
+vite , tailwind css , Mui 
+
+
 # install mui metarial
 
 npm install @mui/material @emotion/react @emotion/styled

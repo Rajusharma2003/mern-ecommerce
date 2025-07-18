@@ -62,6 +62,7 @@ const Header = () => {
      <div className="header py-4 border-gray-200 border-b-[1px]">
             <div className="container flex items-center justify-between">
 
+              {/* logo section */} 
               <div className="col1 w-[25%]">
                   <Link to={"/"}> 
                     <img src="https://serviceapi.spicezgold.com/download/1744255975457_logo.jpg" alt="" />

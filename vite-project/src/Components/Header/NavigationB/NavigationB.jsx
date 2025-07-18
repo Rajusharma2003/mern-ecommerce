@@ -15,7 +15,7 @@ const NavigationB = () => {
     const[isOpenCatPanel, setIsOpenCatPanel] = useState(false)
 
     const openCategoryPanel = () => {
-        setIsOpenCatPanel(!isOpenCatPanel)
+        setIsOpenCatPanel(true)
     }
 
     return (
@@ -66,12 +66,11 @@ const NavigationB = () => {
             </nav>
 
             {/* import Category section */}
-            <CategoryPanel openCategoryPanel={openCategoryPanel} isOpenCatPanel={isOpenCatPanel}/>
-            
-            
+            <CategoryPanel  isOpenCatPanel={isOpenCatPanel} setIsOpenCatPanel={setIsOpenCatPanel}/>
+
             </>
-    )
+    );
     
-}
+};
 
 export default NavigationB

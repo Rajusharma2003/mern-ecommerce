@@ -7,21 +7,49 @@ import Divider from '@mui/material/Divider';
 import ListItem from '@mui/material/ListItem';
 import ListItemButton from '@mui/material/ListItemButton';
 import ListItemText from '@mui/material/ListItemText';
+
+// imort react icons
+import { FaRegWindowClose } from "react-icons/fa";
+import { FaPlusSquare } from "react-icons/fa";
+
+
 import { useState } from 'react';
 
 
-// this file is impoted from mui website
+// This file is impoted from mui website
 const CategoryPanel = (props) => {
 
-    const [open, setOpen] = useState(false);
+    // const [open, setOpen] = useState(false);
 
     const toggleDrawer = (newOpen) => () => {
-      setOpen(newOpen);
+      props.setIsOpenCatPanel(newOpen);
     };
 
     // drow list
     const DrawerList = (
-        <Box sx={{ width: 250 }} role="presentation" onClick={props.openCategoryPanel()}>
+        <Box sx={{ width: 250 }} role="presentation" >
+
+          <h3 className='text-[16px] font-[500] p-3 flex items-center justify-between'>
+            Shop By Categories  
+              <FaRegWindowClose 
+              onClick={toggleDrawer(false)} 
+              className='cursor-pointer text-[20px]'
+              />
+            </h3>
+
+            {/* Adding all the menu */}
+            <div className="scroll">
+              <ul className="w-full">
+                 <li className="list-none flex items-center relative">
+                  <Button 
+                  className='w-full !text-left !justify-start !px-3 !text-black'>Fashion 
+                  <FaPlusSquare  className='absolute top-[10px] right-[15px]'/>
+
+                  </Button>
+                 </li>
+              </ul>
+            </div>
+
           <List>
             {['Inbox', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
               <ListItem key={text} disablePadding>
@@ -49,8 +77,8 @@ const CategoryPanel = (props) => {
 
   return (
     <>
-     <Button onClick={toggleDrawer(true)}>Open drawer</Button>
-      <Drawer open={open} onClose={toggleDrawer(false)}>
+     {/* <Button onClick={toggleDrawer(true)}>Open drawer</Button> */}
+      <Drawer open={props.isOpenCatPanel} onClose={toggleDrawer(false)}>
         {DrawerList}
       </Drawer>
     </>
