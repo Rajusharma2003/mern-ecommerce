@@ -2,13 +2,15 @@ import Button  from '@mui/material/Button'
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom';
 
-
 // icon menu
 import { RiMenu2Line } from "react-icons/ri";
 
 // angle icon
 import { TfiAngleDown } from "react-icons/tfi";
 import CategoryPanel from './CategoryPanel';
+
+// import css file
+import './style.css';
 
 const NavigationB = () => {
 
@@ -26,7 +28,7 @@ const NavigationB = () => {
                             <Button className='!text-black gap-2 w-full' onClick={openCategoryPanel}>
                                 <RiMenu2Line />
                                 Shop By Categories
-                                <TfiAngleDown/>
+                                <TfiAngleDown className='text-[13px] ml-auto font-bold '/>
                                 </Button>
                         </div>
 
