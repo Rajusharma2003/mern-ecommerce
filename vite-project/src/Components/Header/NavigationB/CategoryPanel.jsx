@@ -14,7 +14,6 @@ import { FaPlusSquare } from "react-icons/fa";
 import { FiMinusCircle } from "react-icons/fi";
 
 
-
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 
@@ -59,7 +58,9 @@ const CategoryPanel = (props) => {
             {/* Adding all the menu */}
             <div className="scroll">
               <ul className="w-full">
-                 <li className="list-none flex items-center relative">
+
+                {/* first menu */}
+                 <li className="list-none flex items-center relative flex-col">
 
                  <Link to="/" className='w-full'>
                     <Button 
@@ -81,14 +82,13 @@ const CategoryPanel = (props) => {
                   className='absolute top-[10px] right-[15px] cursor-pointer' 
                   onClick={() => openSubmenu(0)}
                   />
-
                  }
                  {/* End */}
 
                   {
                     submenuIndex === 0 && (
                       // This is the submenu
-                      <ul className='submenu absolute top-[100%] left-[0%] w-full pl-3'>
+                      <ul className='submenu w-full pl-3'>
                         <li className='list-none relative'>
 
                           <Link to="/" className='w-full'>
@@ -116,7 +116,7 @@ const CategoryPanel = (props) => {
 
                           {
                             innerSubmenuIndex === 0 && (
-                                  <ul className='inner_submenu absolute top-[100%] left-[0%] w-full pl-3'>
+                                  <ul className='inner_submenu  w-full pl-3'>
                                     {/* Sub submenu */}
                                     <li className='list-none relative mb-1'>
                                       <Link to="/" 
@@ -150,6 +150,113 @@ const CategoryPanel = (props) => {
                     )}
                   
                  </li>
+                {/* end */}
+
+                 {/* This is the second menu in category */}
+                  <li className="list-none flex items-center relative flex-col">
+
+                 <Link to="/" className='w-full'>
+                    <Button 
+                    className='w-full !text-left !justify-start !px-3 !text-black'>Outerwear 
+                    </Button>
+                 </Link>
+
+
+                {/* Condition rendering is apply here */}
+                 {
+                  submenuIndex === 1 ?
+                  <FiMinusCircle 
+                    className='absolute top-[10px] right-[15px] cursor-pointer' 
+                  onClick={() => openSubmenu(1)}
+                  />
+                  
+                  :
+                  <FaPlusSquare
+                  className='absolute top-[10px] right-[15px] cursor-pointer' 
+                  onClick={() => openSubmenu(1)}
+                  />
+                 }
+                 {/* End */}
+
+                  {
+                    submenuIndex === 1 && (
+                      // This is the submenu
+                      <ul className='submenu w-full pl-3'>
+                        <li className='list-none relative'>
+
+                          <Link to="/" className='w-full'>
+                            <Button 
+                              className='w-full !text-left !justify-start !px-3 !text-black'>Apparel 
+                            </Button>
+                          </Link>
+
+
+                       {/* Condition rendering is apply here */}
+                          {
+                          innerSubmenuIndex === 1 ?
+                          <FiMinusCircle 
+                            className='absolute top-[10px] right-[15px] cursor-pointer' 
+                          onClick={() => InneropenSubmenu(1)}
+                          />
+                          
+                          :
+                          <FaPlusSquare
+                          className='absolute top-[10px] right-[15px] cursor-pointer' 
+                          onClick={() => InneropenSubmenu(1)}
+                          />
+                        }
+                        {/* End */}
+
+                          {
+                            innerSubmenuIndex === 1 && (
+                                  <ul className='inner_submenu w-full pl-3'>
+                                    {/* Sub submenu */}
+                                    <li className='list-none relative mb-1'>
+                                      <Link to="/" 
+                                        className='link w-full !text-left !justify-start !px-3 transition text-[14px]'>Smart Tablets 
+                                      </Link>
+                                    </li>
+
+                                    <li className='list-none relative mb-1'>
+                                      <Link to="/" 
+                                        className='link w-full !text-left !justify-start !px-3 transition text-[14px]'>Leather watch 
+                                      </Link>
+                                    </li>
+
+                                    <li className='list-none relative mb-1'>
+                                      <Link to="/" 
+                                        className='link w-full !text-left !justify-start !px-3 transition text-[14px]'>Rolling Diamond 
+                                      </Link>
+                                    </li>
+
+                                    <li className='list-none relative mb-1'>
+                                      <Link to="/" 
+                                        className='link w-full !text-left !justify-start !px-3 transition text-[14px]'>bottles 
+                                      </Link>
+                                    </li>
+                                  </ul>
+                            )
+                          }
+                        
+                        </li>
+                      </ul>
+                    )}
+                  
+                 </li>
+                 {/* Edn */}
+
+                  {/* This is the third menu in category */}
+                  <li className="list-none flex items-center relative flex-col">
+
+                 <Link to="/" className='w-full'>
+                    <Button 
+                    className='w-full !text-left !justify-start !px-3 !text-black'>Dk Khatri 
+                    </Button>
+                 </Link>
+                 </li>
+                    {/* End */}
+
+
               </ul>
             </div>
 
