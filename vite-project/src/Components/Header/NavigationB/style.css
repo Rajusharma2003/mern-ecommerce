@@ -3,6 +3,19 @@
 
 }
 
-.categorypanel .submenu {
-   /* display: none; */
-}
+/* Nav (fashion l.no.47) button hover */
+.nav li .submenu {visibility: hidden; z-index: 1000;}
+.nav li:hover .submenu {    opacity: 1!important;    visibility: inherit;}
+
+/* hover colour change */
+.nav li .submenu li:hover button { color: #ff5252 !important;}
+/* End */
+
+/* This is for the inner submenu */
+.nav li .submenu li .submenu { top: 0px !important; left: 120% !important; opacity: 0 !important; }
+.nav li .submenu li:hover .submenu {left: 100% !important; opacity: 1 !important; }
+
+/* hover colour change */
+.nav li .submenu li .submenu button {color: rgba(0, 0, 0, 0.80) !important; }
+.nav li .submenu li .submenu button:hover {color: #ff5252 !important; }
+/* end */

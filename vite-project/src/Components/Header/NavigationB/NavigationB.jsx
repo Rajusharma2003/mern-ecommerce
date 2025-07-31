@@ -14,7 +14,7 @@ const NavigationB = () => {
     const[isOpenCatPanel, setIsOpenCatPanel] = useState(false)
 
     const openCategoryPanel = () => {
-        setIsOpenCatPanel(true)
+        setIsOpenCatPanel(true);
     }
 
     return (
@@ -29,13 +29,96 @@ const NavigationB = () => {
                         </Button>
                     </div>
                     <div className="col_2 w-[80%] ">
-                        <ul className="flex items-center justify-around gap-3">
+                    {/* there is a nav and this is the main class to handle all the dropdown both submenu and innersubmenu */}
+                        <ul className="flex items-center justify-around gap-3 nav">
+
+                            {/* Home section */}
                             <li className="list-none">
                                 <Link to="/" className='link transition font-[500] text-[14px]'>Home</Link>
                             </li>
-                            <li className="list-none">
-                                <Link to="/" className='link transition font-[500] text-[14px]'>Fashion</Link>
+
+                            {/* fashion section */}
+                            <li className="list-none relative">
+                                <Link to="/" 
+                                    className='link transition font-[500] text-[14px] '>
+                                    Fashion
+                                </Link>
+
+                                {/* Hover table submenu*/}
+                                <div className='submenu absolute top-[120%] left-[0%] min-w-[200px] bg-white shadow-md opacity-0 transition-all'>
+                                    <ul className='flex flex-col gap-2 p-3'>
+                                        <li className="list-none w-full relative">
+                                            <Link to="/">
+                                                <Button className='!text-[rgba(0,0,0,0.8)] w-full !text-left !justify-start !rounded-none'>
+                                                Men
+                                                </Button>
+                                            </Link>
+
+                                             {/* men Hover table innerSubmenu*/}
+                                            <div className='submenu absolute top-[0%] left-[100%] min-w-[200px] bg-white shadow-md opacity-0 transition-all'>
+                                                <ul className='flex flex-col gap-2 p-3'>
+                                                    <li className="list-none w-full">
+                                                        <Link to="/">
+                                                            <Button className='!text-[rgba(0,0,0,0.8)] w-full !text-left !justify-start !rounded-none'>T-Shirt</Button>
+                                                        </Link>
+                                                    </li>
+
+                                                    <li className="list-none w-full">
+                                                        <Link to="/">
+                                                    <Button className='!text-[rgba(0,0,0,0.8)] w-full !text-left !justify-start !rounded-none'>Jeans</Button>
+                                                        </Link>
+                                                    </li>
+
+                                                    <li className="list-none w-full">
+                                                        <Link to="/">
+                                                    <Button className='!text-[rgba(0,0,0,0.8)] w-full !text-left !justify-start !rounded-none'>Footwear</Button>
+                                                        </Link>
+                                                    </li>
+
+                                                    <li className="list-none w-full">
+                                                        <Link to="/">
+                                                    <Button className='!text-[rgba(0,0,0,0.8)] w-full !text-left !justify-start !rounded-none'>Watch</Button>
+                                                        </Link>
+                                                    </li>
+
+                                                    <li className="list-none w-full">
+                                                        <Link to="/">
+                                                    <Button className='!text-[rgba(0,0,0,0.8)] w-full !text-left !justify-start !rounded-none'>Pents</Button>
+                                                        </Link>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                            {/* End */}
+                                        </li>
+
+                                        <li className="list-none w-full">
+                                            <Link to="/">
+                                           <Button className='!text-[rgba(0,0,0,0.8)] w-full !text-left !justify-start !rounded-none'>Women</Button>
+                                            </Link>
+                                        </li>
+
+                                        <li className="list-none w-full">
+                                            <Link to="/">
+                                           <Button className='!text-[rgba(0,0,0,0.8)] w-full !text-left !justify-start !rounded-none'>Kids</Button>
+                                            </Link>
+                                        </li>
+
+                                        <li className="list-none w-full">
+                                            <Link to="/">
+                                           <Button className='!text-[rgba(0,0,0,0.8)] w-full !text-left !justify-start !rounded-none'>Girls</Button>
+                                            </Link>
+                                        </li>
+
+                                        <li className="list-none w-full">
+                                            <Link to="/">
+                                           <Button className='!text-[rgba(0,0,0,0.8)] w-full !text-left !justify-start !rounded-none'>Boys</Button>
+                                            </Link>
+                                        </li>
+                                    </ul>
+                                </div>
                             </li>
+
+
                             <li className="list-none">
                                 <Link to="/" className='link transition font-[500] text-[14px]'>Electronics</Link>
                             </li>

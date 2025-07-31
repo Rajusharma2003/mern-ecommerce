@@ -9,7 +9,7 @@ body{
     font-family: "Montserrat", sans-serif;
     font-optical-sizing: auto;
     background-color: #f5f0f0;
-  
+    overflow-x: hidden;
 }
 
 .container {
@@ -22,3 +22,71 @@ body{
 
 /* navbar cart color */
 .MuiBadge-badge{background-color: #ff5252 !important;}
+
+/* This is for home page carousel */
+.mySwiperHome {overflow: inherit !important;}
+
+/* This is for the homeSlider sliver prev button  */
+.swiper-button-prev , .swiper-button-next{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #fff;
+    border-radius: 100%;
+    width: 45px;
+    height: 45px;
+    min-width: 45px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24) !important;
+}
+
+
+/* This is for the catgory sliver prev button  */
+/* Custom Swiper navigation button size for CatSlider */
+.mySwiper .swiper-button-next,
+.mySwiper .swiper-button-prev {
+  width: 44px;
+  height: 44px;
+  font-size: 25px;
+}
+.mySwiper .swiper-button-next:hover,
+.mySwiper .swiper-button-prev:hover {
+  background: #ff5252;
+}
+.mySwiper .swiper-button-next:hover::after,
+.mySwiper .swiper-button-prev:hover::after {
+  color: #ffffff;
+}
+.mySwiper .swiper-button-next:after,
+.mySwiper .swiper-button-prev:after {
+  font-size: 25px;
+}
+
+/* This is for the category container section */
+.swiperImgCont {
+    padding: 10px;
+}
+
+.cat-img-animate {
+            transition: transform 0.3s;
+          }
+          .Categoryitem {
+            transition: box-shadow 0.3s;
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto;
+          }
+          .Categoryitem:hover {
+            box-shadow: 0 8px 4px 0 rgba(0,0,0,0.18), 0 1.5px 6px 0 rgba(0,0,0,0.12);
+          }
+          .Categoryitem:hover .cat-img-animate {
+            animation: upDown 0.7s infinite alternate;
+          }
+          @keyframes upDown {
+            0% { transform: translateY(0); }
+            100% { transform: translateY(-8px); }
+          }
