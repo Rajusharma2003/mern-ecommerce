@@ -15,7 +15,7 @@ import { Link } from 'react-router-dom';
 
 const CatSlider = () => {
   return (
-    <div className='homeCatSlider'>
+    <div className='homeCatSlider pt-4 py-8'>
         <div className='container'>
        
         {/* This is comming form the swiper components */}

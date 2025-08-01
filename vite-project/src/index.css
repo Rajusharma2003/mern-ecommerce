@@ -12,6 +12,13 @@ body{
     overflow-x: hidden;
 }
 
+/* this is for slider scroll bar */
+ ::-webkit-scrollbar{ width: 10px !important; height: 10px !important;}
+ ::-webkit-scrollbar-thumb{ background: #ff5252 !important;}
+ ::-webkit-scrollbar-track{ background: white;}
+ /* end of slider scroll bar */
+
+
 .container {
     width: 90%;
     margin:auto
