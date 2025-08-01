@@ -43,9 +43,18 @@ const CategoryPanel = (props) => {
                  <li className="list-none flex items-center relative">
                   <Button 
                   className='w-full !text-left !justify-start !px-3 !text-black'>Fashion 
+                  </Button>
                   <FaPlusSquare  className='absolute top-[10px] right-[15px]'/>
 
-                  </Button>
+                    {/* submenu */}
+                    <ul className='submenu absolute top-[100%] left-[0%] w-full pl-3'>
+                       <li className="list-none relative">
+                       <Button 
+                      className='w-full !text-left !justify-start !px-3 !text-black'>Fashion 
+                      </Button>
+                       </li>
+                    </ul>
+
                  </li>
               </ul>
             </div>
